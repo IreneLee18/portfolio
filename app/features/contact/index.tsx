@@ -27,6 +27,22 @@ export default function AboutPage() {
 
       <Divider />
 
+      {/* About Project Section */}
+      <section className="space-y-4">
+        <Title
+          icon="💡"
+          title="About This Project"
+        />
+        <div className="space-y-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p>This project is something personal to me — a little digital space where I record my daily life, including thoughts, photos, and small moments that make each day unique.</p>
+          <p className="font-medium">Why did I come up with this idea❓❗️</p>
+          <p>Because I don't want to post on Instagram or Threads every day 😆</p>
+          <p>Through this project, you'll get to enjoy a glimpse of my life ❤️</p>
+        </div>
+      </section>
+
+      <Divider />
+
       {/* Connect Section */}
       <section className="space-y-4">
         <Title

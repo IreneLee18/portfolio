@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/i18n/useTranslation';
 
 export default function Homepage() {
-  const { t, language } = useTranslation();
-  
-  // 桌机版：完整文字
-  const desktopText = t('home.greeting.desktop');
-  // 手机版：分成两行
-  const mobileTextLine1 = t('home.greeting.mobile.line1');
-  const mobileTextLine2 = t('home.greeting.mobile.line2');
+  // Desktop: full text
+  const desktopText = 'Hi this is Irene, Welcome to my journey.';
+  // Mobile: split into two lines
+  const mobileTextLine1 = 'Hi this is Irene,';
+  const mobileTextLine2 = 'Welcome to my journey.';
   
   const container = {
     hidden: { opacity: 0 },
@@ -52,10 +49,9 @@ export default function Homepage() {
   return (
     <div className="container flex-1 flex items-center justify-center px-4">
       <div className="text-center">
-        {/* 桌机版：完整文字，不分行 */}
+        {/* Desktop: full text, single line */}
         <h1 className="hidden md:block md:text-4xl lg:text-6xl font-bold mb-4">
           <motion.span
-            key={`desktop-${language}`}
             variants={container}
             initial="hidden"
             animate="visible"
@@ -66,10 +62,9 @@ export default function Homepage() {
         </h1>
 
 
-        {/* 手机版：文字变小且分行 */}
+        {/* Mobile: smaller text, split into two lines */}
         <h1 className="block md:hidden text-2xl font-bold mb-4">
           <motion.span
-            key={`mobile-${language}`}
             variants={container}
             initial="hidden"
             animate="visible"
