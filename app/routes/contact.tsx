@@ -1,3 +1,5 @@
+import ContactPage from '@/features/contact';
+
 export default function Contact() {
-  return <div>contact</div>;
+  return <ContactPage />;
 }

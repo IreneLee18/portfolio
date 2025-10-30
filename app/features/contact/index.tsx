@@ -1,57 +1,86 @@
-import { Divider } from '@/components/customs/divider';
 import { PageLayout } from '@/components/customs/pageLayout';
+import { Linkedin, Github, Mail, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router';
 
-const Title = ({ icon, title }: { icon: string; title: string }) => {
+type ContactItemProps = {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href: string;
+};
+
+const ContactItem = ({ icon, label, value, href }: ContactItemProps) => {
   return (
-    <h2 className="lg:text-2xl md:text-xl text-lg font-semibold flex items-center gap-2">
-      <span>{icon}</span>
-      <span>{title}</span>
-    </h2>
+    <Link
+      to={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-4 md:gap-6 py-4 md:py-5 border-b border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300"
+    >
+      <div className="shrink-0 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300">
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-xs md:text-sm font-medium text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-1">
+          {label}
+        </div>
+        <div className="text-base md:text-lg text-gray-900 dark:text-gray-100 font-medium group-hover:text-gray-400 dark:group-hover:text-gray-400 transition-colors duration-300">
+          {value}
+        </div>
+      </div>
+      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-gray-400 dark:text-gray-600 group-hover:text-gray-400 dark:group-hover:text-gray-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+    </Link>
   );
 };
 
-export default function AboutPage() {
+export default function ContactPage() {
+  const contactInfo = [
+    {
+      icon: <Linkedin className="w-6 h-6 md:w-7 md:h-7" />,
+      label: 'LinkedIn',
+      value: 'Irene Lee',
+      href: 'https://www.linkedin.com/in/irene-lee-690ab1232',
+    },
+    {
+      icon: <Github className="w-6 h-6 md:w-7 md:h-7" />,
+      label: 'GitHub',
+      value: 'Irene',
+      href: 'https://github.com/IreneLee18',
+    },
+    {
+      icon: <Mail className="w-6 h-6 md:w-7 md:h-7" />,
+      label: 'Email',
+      value: 'cc86418520@gmail.com',
+      href: 'mailto:cc86418520@gmail.com',
+    },
+  ];
+
   return (
-    <PageLayout title="About" className="flex flex-col gap-8">
-      {/* Introduction Section */}
+    <PageLayout title="Contact" className="flex flex-col gap-8 md:gap-10">
       <section className="space-y-4">
-        <Title
-          icon="👋"
-          title="Hi, I'm Irene Lee"
-        />
-        <div className="space-y-2 text-gray-700 dark:text-gray-300 leading-relaxed">
-          <p>I'm a front-end engineer with 3+ years of experience, passionate about crafting reliable, elegant, and impactful digital experiences.</p>
-          <p>I love bridging creativity and technology to deliver scalable solutions that not only work well but also feel great to use.</p>
+        <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-3">
+          <p className="text-base md:text-lg">
+            Feel free to reach out if you'd like to collaborate, discuss
+            opportunities, or just have a chat about technology and creativity.
+          </p>
+          <p className="text-base md:text-lg">
+            I'm always open to interesting conversations and new connections! ✨
+          </p>
         </div>
       </section>
 
-      <Divider />
-
-      {/* About Project Section */}
-      <section className="space-y-4">
-        <Title
-          icon="💡"
-          title="About This Project"
-        />
-        <div className="space-y-2 text-gray-700 dark:text-gray-300 leading-relaxed">
-          <p>This project is something personal to me — a little digital space where I record my daily life, including thoughts, photos, and small moments that make each day unique.</p>
-          <p className="font-medium">Why did I come up with this idea❓❗️</p>
-          <p>Because I don't want to post on Instagram or Threads every day 😆</p>
-          <p>Through this project, you'll get to enjoy a glimpse of my life ❤️</p>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Connect Section */}
-      <section className="space-y-4">
-        <Title
-          icon="💬"
-          title="Let's Connect"
-        />
-        <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          <p>If you're curious about this project or want to chat about front-end development, creativity, or digital life — feel free to reach out anytime ✨</p>
-        </div>
+      <section className="space-y-4 md:space-y-5">
+        {contactInfo.map((item) => {
+          return (
+            <ContactItem
+              key={item.label}
+              icon={item.icon}
+              label={item.label}
+              value={item.value}
+              href={item.href}
+            />
+          );
+        })}
       </section>
     </PageLayout>
   );
