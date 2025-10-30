@@ -11,7 +11,13 @@ type PortfolioItemProps = {
   slug: string;
 };
 
-const PortfolioItem = ({ id, title, date, image, slug }: PortfolioItemProps) => {
+const PortfolioItem = ({
+  id,
+  title,
+  date,
+  image,
+  slug,
+}: PortfolioItemProps) => {
   return (
     <Link
       to={`/portfolio/${slug}`}
@@ -19,7 +25,7 @@ const PortfolioItem = ({ id, title, date, image, slug }: PortfolioItemProps) => 
     >
       {/* Left Side: Title & Date */}
       <div className="flex flex-col justify-center gap-2 min-w-0">
-        <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 truncate">
+        <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-300 truncate">
           {title}
         </h3>
         <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
