@@ -1,0 +1,12 @@
+[Date] 2025-10-30
+[Target Summary] 
+設計響應式 Footer 頁尾，包含版權資訊與社交連結 (LinkedIn, GitHub)
+[Prompt] 
+@footer.tsx 幫我調整長相,我需要達到RWD效果。請根據你的美感幫我製作完美順序。
+需要有
+1. Copyright © 2026 IreneLee. All rights reserved.
+2. 連結: linked
+3. 連結: github
+
+----------------------------------------
+
