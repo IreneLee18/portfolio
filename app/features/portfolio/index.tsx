@@ -3,7 +3,8 @@ import { PageLayout } from '@/components/customs/pageLayout';
 import { portfolios } from '@/constants/portfolios';
 import { cn } from '@/lib/utils';
 import { Github, Calendar, Globe, Wrench } from 'lucide-react';
-import { Link } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
+import { paths } from '@/constants/paths';
 
 type InfoItemProps = {
   className?: string;
@@ -42,7 +43,9 @@ const InfoItem = ({ className, icon, value, href }: InfoItemProps) => {
 };
 
 export default function PortfolioPage() {
-  const portfolio = portfolios['my-journey'];
+  const navigate = useNavigate();
+  const params = useParams();
+  const portfolio = portfolios[params.id as keyof typeof portfolios];
   const renderTechs = (className: string) => {
     return (
       <InfoItem
@@ -70,6 +73,8 @@ export default function PortfolioPage() {
     <PageLayout
       title={portfolio.title}
       className="flex flex-col gap-6 lg:gap-10"
+      goBackString="Back to Portfolios"
+      goBack={() => navigate(paths.portfolios.url)}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
         <div className="flex flex-col gap-4 lg:gap-8 mb-4 lg:mb-0">
