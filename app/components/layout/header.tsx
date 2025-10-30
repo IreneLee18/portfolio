@@ -6,13 +6,9 @@ import { Link } from 'react-router';
 import DesktopNavigation from './navigation/desktop';
 import MobileNavigation from './navigation/mobile';
 import { useTheme } from '@/hooks/useTheme';
-import { useLanguage } from '@/hooks/useLanguage';
-import { useTranslation } from '@/i18n/useTranslation';
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage } = useLanguage();
-  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -35,7 +31,7 @@ export function Header() {
               className="hover:opacity-80 transition-opacity"
               onClick={closeMobileMenu}
             >
-              {t('header.title')}
+              Irene Lee
             </Link>
           </div>
 
@@ -45,22 +41,10 @@ export function Header() {
             <Button
               size="icon"
               variant="iconGhost"
-              aria-label={t('header.toggleLanguage')}
-              className="hidden md:flex"
-              onClick={toggleLanguage}
-              title={t('header.toggleLanguage')}
-            >
-              <span className="text-sm font-medium">
-                {language.toUpperCase()}
-              </span>
-            </Button>
-            <Button
-              size="icon"
-              variant="iconGhost"
-              aria-label={t('header.toggleTheme')}
+              aria-label="Toggle Theme"
               className="hidden md:flex"
               onClick={toggleTheme}
-              title={t('header.toggleTheme')}
+              title="Toggle Theme"
             >
               {theme === 'dark' ? <Moon /> : <Sun />}
             </Button>
@@ -103,7 +87,6 @@ export function Header() {
           isMobileMenuOpen={isMobileMenuOpen}
           closeMobileMenu={closeMobileMenu}
           toggleTheme={toggleTheme}
-          toggleLanguage={toggleLanguage}
         />
       </div>
     </header>
