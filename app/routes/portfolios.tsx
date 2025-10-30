@@ -1,3 +1,5 @@
+import PortfoliosPage from '@/features/portfolios';
+
 export default function Portfolios() {
-  return <div>portfolios</div>;
+  return <PortfoliosPage />;
 }
