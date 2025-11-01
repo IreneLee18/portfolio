@@ -17,7 +17,7 @@ export const portfolios: Record<string, Portfolio> = {
     id: 'my-journey',
     title: "Irene Lee's Journey",
     image: myJourneyImage,
-    projectLink: 'https://my-journey-n9i6.vercel.app/',
+    projectLink: 'https://my-journey.irene-joyu-lee.com',
     githubLink: 'https://github.com/IreneLee18/my-journey',
     date: 'October 2025',
     technologies: [
