@@ -1,3 +1,5 @@
+import myJourneyImage from '@/assets/portfolios/my-journey.png';
+import portfolioImage from '@/assets/portfolios/portfolio-website.png';
 type Portfolio = {
   id: string;
   title: string;
@@ -14,7 +16,7 @@ export const portfolios: Record<string, Portfolio> = {
   'my-journey': {
     id: 'my-journey',
     title: "Irene Lee's Journey",
-    image: './public/portfolios/my-journey.png',
+    image: myJourneyImage,
     projectLink: 'https://my-journey-n9i6.vercel.app/',
     githubLink: 'https://github.com/IreneLee18/my-journey',
     date: 'October 2025',
@@ -39,8 +41,8 @@ export const portfolios: Record<string, Portfolio> = {
   portfolio: {
     id: 'portfolio',
     title: 'Portfolio',
-    image: './public/portfolios/portfolio-website.png',
-    projectLink: 'https://portfolio-website-n9i6.vercel.app/',
+    image: portfolioImage,
+    projectLink: 'https://irene-joyu-lee.com/portfolio/portfolio',
     githubLink: 'https://github.com/IreneLee18/portfolio',
     date: 'October 2025',
     technologies: [
@@ -51,8 +53,8 @@ export const portfolios: Record<string, Portfolio> = {
       'Shadcn UI',
     ],
     description:
-      "This is a portfolio website for Irene Lee. It is a simple website that displays Irene Lee's projects and skills.",
+      "This is a modern, minimalist portfolio website showcasing Irene Lee's professional work and technical skills. The website features a clean and elegant design with smooth animations and transitions powered by Framer Motion. It includes a dynamic homepage with an animated sprite loading effect that cycles every 5 seconds, guiding visitors to explore projects. The entire website is built with full responsive design, ensuring optimal viewing experience across all devices from mobile to desktop. It supports dark mode for comfortable viewing in different lighting conditions and follows modern web design principles with minimalist aesthetics, focusing on content and user experience rather than heavy visual elements.",
     chDescription:
-      '這是一個 Irene Lee 的個人作品集網站。它是一個簡單的網站，用於展示 Irene Lee 的作品和技能。',
+      '這是一個現代化極簡風格的個人作品集網站，展示 Irene Lee 的專業作品與技術能力。網站採用簡潔優雅的設計風格，運用 Framer Motion 打造流暢的動畫與過渡效果。首頁設計了獨特的小精靈載入動畫，每 5 秒循環一次，引導訪客探索作品集。整個網站採用全響應式設計，確保在各種裝置上都能提供最佳的瀏覽體驗。支援深色模式以適應不同的閱讀環境，並遵循現代網頁設計原則，採用極簡美學，專注於內容呈現和使用者體驗，避免過度的視覺元素。',
   },
 };
